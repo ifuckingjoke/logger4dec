@@ -1,11 +1,16 @@
+<div align="center">
+
 # logger4dec
 
-[![PyPI version](https://badge.fury.io/py/logger4dec.svg)](https://badge.fury.io/py/logger4dec)
-[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![GitHub](https://img.shields.io/badge/github-ifuckingjoke%2Flogger4dec-blue)](https://github.com/ifuckingjoke/logger4dec)
+[![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=for-the-badge)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.7+-blue.svg?style=for-the-badge&logo=python)](https://www.python.org)
+[![PyPI](https://img.shields.io/pypi/v/logger4dec.svg?style=for-the-badge)](https://pypi.org/project/logger4dec)
 
 A lightweight, decorator-based logger for colorful terminal output in Python.
+
+</div>
+
+---
 
 ## 📋 Overview
 
@@ -21,13 +26,13 @@ A lightweight, decorator-based logger for colorful terminal output in Python.
 
 ## 🚀 Installation
 
-Install from PyPI (recommended):
+### Via pip (Recommended)
 
 ```bash
 pip install logger4dec
 ```
 
-Or clone and install from source:
+### From source
 
 ```bash
 git clone https://github.com/ifuckingjoke/logger4dec.git
@@ -173,34 +178,26 @@ class Logger:
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
 
 ## 📄 License
 
-This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0) - see the [LICENSE](LICENSE) file for details.
 
-## 🙋 Support
+For more information about GPL-3.0, visit [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html).
 
-If you have questions or issues, please open an issue on the [GitHub repository](https://github.com/ifuckingjoke/logger4dec/issues).
+## Support
 
-## 🔗 Links
-
-- [Repository](https://github.com/ifuckingjoke/logger4dec)
-- [PyPI Package](https://pypi.org/project/logger4dec/)
-- [Issues](https://github.com/ifuckingjoke/logger4dec/issues)
-- [Discussions](https://github.com/ifuckingjoke/logger4dec/discussions)
+- 🐛 [Issue Tracker](https://github.com/ifuckingjoke/logger4dec/issues)
+- 💬 [Discussions](https://github.com/ifuckingjoke/logger4dec/discussions)
+- 📦 [PyPI Package](https://pypi.org/project/logger4dec/)
 
 ---
 
 <div align="center">
-Made with ❤️ by ifuckingjoke
-</div>
-<div align="center">
+
+Made with ❤️ by [ifuckingjoke](https://github.com/ifuckingjoke)
+
 ifuckingjoke@proton.me
+
 </div>
