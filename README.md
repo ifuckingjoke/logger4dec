@@ -112,5 +112,9 @@ If you have questions or issues, please open an issue on the [GitHub repository]
 - [Discussions](https://github.com/ifuckingjoke/logger4dec/discussions)
 
 ---
-
+<div align="center">
 **Made with ❤️ by [ifuckingjoke](https://github.com/ifuckingjoke)**
+</div>
+<div align="center">
+ifuckingjoke@proton.me
+</div>
