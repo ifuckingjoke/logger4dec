@@ -1,5 +1,10 @@
 # logger4dec
 
+[![PyPI version](https://badge.fury.io/py/logger4dec.svg)](https://badge.fury.io/py/logger4dec)
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![GitHub](https://img.shields.io/badge/github-ifuckingjoke%2Flogger4dec-blue)](https://github.com/ifuckingjoke/logger4dec)
+
 A lightweight, decorator-based logger for colorful terminal output in Python.
 
 ## 📋 Overview
