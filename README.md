@@ -4,15 +4,15 @@ A lightweight, decorator-based logger for colorful terminal output in Python.
 
 ## 📋 Overview
 
-`logger4dec` is a Python logging utility that makes it easy to add logging to your functions using decorators. It provides colorful, readable terminal output to help you debug and monitor your applications.
+`logger4dec` is a Python logging utility that makes it easy to add logging to your functions using decorators. It provides colorful, readable terminal output with ANSI color codes to help you debug and monitor your applications.
 
 ## ✨ Features
 
-- **Decorator-based**: Simple `@logger` decorator for easy integration
-- **Colorful output**: Beautiful, color-coded log messages for better readability
+- **Decorator-based**: Use the `Logger` class to create decorators with custom colors
+- **Colorful output**: Beautiful ANSI color-coded log messages for better readability
 - **Lightweight**: Minimal dependencies, fast performance
-- **Easy to use**: Works with minimal configuration
-- **Flexible**: Support for various log levels and custom formatting
+- **Flexible**: Support for foreground colors, text styles, and background colors
+- **Easy to use**: Simple API with keyword-only arguments
 
 ## 🚀 Installation
 
@@ -33,59 +33,137 @@ pip install logger4dec
 
 ### Basic Usage
 
-```python
-from logger4dec import logger
+First, create a `Logger` instance and use it to decorate your functions:
 
-@logger
+```python
+from logger4dec import Logger
+
+# Create a logger instance
+logger = Logger()
+
+# Use it as a decorator with the log method
+@logger.log("Function started")
 def my_function(x, y):
     result = x + y
     return result
 
 my_function(5, 3)
+# Output: Function started
+# Then the function executes normally
 ```
 
-### With Log Levels
+### With Colors
+
+Customize the output with ANSI color codes. Use `foreground`, `style`, and `background` parameters:
 
 ```python
-from logger4dec import logger
+from logger4dec import Logger
 
-@logger(level="info")
+# Green text (foreground=32), bold style (style=1)
+logger = Logger(foreground=32, style=1)
+
+@logger.log("Processing data...")
 def process_data(data):
-    # Your code here
-    return processed_data
+    return data * 2
 
-@logger(level="debug")
-def debug_mode():
-    # Detailed debugging information
-    pass
+process_data([1, 2, 3])
 ```
 
-### Customization
+### Color Codes Reference
+
+#### Foreground Colors
+- `30` - Black
+- `31` - Red
+- `32` - Green
+- `33` - Yellow
+- `34` - Blue
+- `35` - Magenta
+- `36` - Cyan
+- `37` - White
+
+#### Text Styles
+- `0` - Normal
+- `1` - Bold
+- `2` - Dim
+- `3` - Italic
+- `4` - Underline
+
+#### Background Colors
+- `40` - Black
+- `41` - Red
+- `42` - Green
+- `43` - Yellow
+- `44` - Blue
+- `45` - Magenta
+- `46` - Cyan
+- `47` - White
+
+### Advanced Examples
 
 ```python
-from logger4dec import logger
+from logger4dec import Logger
 
-@logger(name="MyLogger", level="warning")
-def important_operation():
-    # Your code here
+# Red bold text with yellow background
+error_logger = Logger(foreground=31, style=1, background=43)
+
+@error_logger.log("ERROR: Something went wrong!")
+def critical_operation():
     pass
+
+# Blue underlined text
+info_logger = Logger(foreground=34, style=4)
+
+@info_logger.log("INFO: Starting process...")
+def start_process():
+    pass
+
+critical_operation()
+start_process()
 ```
 
-## 🎨 Log Levels
+## 🎨 How It Works
 
-- **INFO**: General information messages
-- **DEBUG**: Detailed debugging information
-- **WARNING**: Warning messages
-- **ERROR**: Error messages
-- **CRITICAL**: Critical errors
+The `Logger` class uses ANSI escape codes to colorize terminal output. The format is:
+```
+\033[{style};{foreground};{background}m{text}\033[0m
+```
 
-## 📝 Configuration
+Where:
+- `\033[` - Escape sequence start
+- `{style}` - Text style (bold, dim, italic, etc.)
+- `{foreground}` - Text color
+- `{background}` - Background color
+- `m` - Command terminator
+- `{text}` - Your log message
+- `\033[0m` - Reset all formatting
 
-Configure logger behavior through decorator parameters:
+## 📝 API Reference
 
-- `name`: Custom logger name (default: function name)
-- `level`: Log level (`debug`, `info`, `warning`, `error`, `critical`)
-- `colorize`: Enable/disable colored output (default: `True`)
+### Logger Class
+
+```python
+class Logger:
+    def __init__(self, *, foreground=0, style=0, background=0):
+        """
+        Initialize a Logger instance.
+        
+        Args:
+            foreground (int): ANSI foreground color code (default: 0)
+            style (int): ANSI text style code (default: 0)
+            background (int): ANSI background color code (default: 0)
+        """
+    
+    def log(self, text: str) -> Callable:
+        """
+        Create a decorator that logs a message before executing the function.
+        
+        Args:
+            text (str): The message to log
+            
+        Returns:
+            Callable: A decorator that logs the text and executes the function
+        """
+```
 
 ## 🤝 Contributing
 
@@ -112,6 +190,7 @@ If you have questions or issues, please open an issue on the [GitHub repository]
 - [Discussions](https://github.com/ifuckingjoke/logger4dec/discussions)
 
 ---
+
 <div align="center">
 Made with ❤️ by ifuckingjoke
 </div>
