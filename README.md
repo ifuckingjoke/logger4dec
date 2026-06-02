@@ -16,17 +16,18 @@ A lightweight, decorator-based logger for colorful terminal output in Python.
 
 ## 🚀 Installation
 
-Clone the repository:
+Install from PyPI (recommended):
+
+```bash
+pip install logger4dec
+```
+
+Or clone and install from source:
 
 ```bash
 git clone https://github.com/ifuckingjoke/logger4dec.git
 cd logger4dec
-```
-
-Or install with pip (if published):
-
-```bash
-pip install logger4dec
+pip install -e .
 ```
 
 ## 📖 Usage
@@ -186,6 +187,7 @@ If you have questions or issues, please open an issue on the [GitHub repository]
 ## 🔗 Links
 
 - [Repository](https://github.com/ifuckingjoke/logger4dec)
+- [PyPI Package](https://pypi.org/project/logger4dec/)
 - [Issues](https://github.com/ifuckingjoke/logger4dec/issues)
 - [Discussions](https://github.com/ifuckingjoke/logger4dec/discussions)
 
